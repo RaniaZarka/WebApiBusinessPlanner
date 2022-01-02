@@ -15,11 +15,10 @@ namespace WebServicesBusinessPlanner.Controllers
     public class sub_qualificationController : ControllerBase
     {
         public const string conn = "Server=tcp:businessio.database.windows.net,1433;Initial Catalog=mentor;Persist Security Info=False;User ID=rania;Password=Rannout345;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
-        // GET: api/<sub_qualificationController>
+        // GET: <sub_qualificationController>
         [HttpGet]
         public IEnumerable<sub_qualification> Get()
         {
-
             var sub_qualificationList = new List<sub_qualification>();
 
             string selectall = "select * from sub_qualification";
@@ -48,11 +47,10 @@ namespace WebServicesBusinessPlanner.Controllers
 
         }
 
-        // GET api/<sub_qualificationController>/5
+        // GET <sub_qualificationController>/5
         [HttpGet("{id}")]
         public IEnumerable<sub_qualification> GetSubBusiness(int id)
         {
-
             List<sub_qualification> sub_qualificationList = new List<sub_qualification>();
 
             var selectByID = "select * from sub_qualification WHERE qualification_Id =@id";
@@ -70,7 +68,6 @@ namespace WebServicesBusinessPlanner.Controllers
                             int sub_qualification_Id = reader.GetInt32(0);
                             string sub_qualification_name = reader.GetString(1);
                             int Id = reader.GetInt32(2);
-                           
                            sub_qualificationList.Add(new sub_qualification(sub_qualification_Id, Id, sub_qualification_name));
                         }
                     }

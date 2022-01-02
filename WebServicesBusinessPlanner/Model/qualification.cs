@@ -7,7 +7,6 @@ namespace WebServicesBusinessPlanner.Model
 {
     public class qualification
     {
-
         public int qualification_Id { get; set; }
         public string qualification_name { get; set; }
 
