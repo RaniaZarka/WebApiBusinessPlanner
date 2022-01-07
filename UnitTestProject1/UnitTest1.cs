@@ -12,6 +12,8 @@ namespace UnitTestProject1
         private readonly qualificationController controler = new qualificationController();
         private readonly sub_qualificationController sqcontroler = new sub_qualificationController();
         private readonly languageController lcontroler = new languageController();
+        private readonly fieldController fcontroller = new fieldController();
+        private readonly countryController ccontroller = new countryController();
 
         [TestMethod]
         public void TestGetAllQualificationMethod()
@@ -67,6 +69,19 @@ namespace UnitTestProject1
         {
             IEnumerable<language> list = lcontroler.Get();
             Assert.AreEqual(2, list.Count());
+        }
+
+        [TestMethod]
+        public void TestGetAllFieldMethod()
+        {
+            IEnumerable<field> list = fcontroller.Get();
+            Assert.AreEqual(1, list.Count());
+        }
+        [TestMethod]
+        public void TestGetAllCountryMethod()
+        {
+            IEnumerable<country> list = ccontroller.Get();
+            Assert.AreEqual(1, list.Count());
         }
     }
 }
